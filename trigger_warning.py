@@ -14,6 +14,7 @@ def fetch_data(url):
 # Hardcoded API Key (should trigger a security warning)
 API_KEY = "123456"
 
+
 # Unused variable (should trigger a warning)
 unused_variable = "I am not used anywhere"
 
