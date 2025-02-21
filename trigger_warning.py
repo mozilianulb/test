@@ -1,23 +1,40 @@
-# trigger_todo_warning.py
-
 import requests
 
-def fetch_data(url):
-    response = requests.get(url)
+# Define a constant for the base URL
+BASE_URL = "https://example.com/api"
 
-    # TODO: Handle error if response is bad (fixme) 
-    if response.status_code != 200:
-        pass  # FIXME: Proper error handling needed
+def fetch_data(endpoint):
+    """
+    Fetches data from the given API endpoint with a timeout.
 
-    return response.text  # Might return None if status is not 200
+    Args:
+        endpoint (str): The API endpoint to fetch data from.
 
-# Hardcoded API Key (should trigger a security warning)
-API_KEY = "123456"
+    Returns:
+        dict: The response JSON if the request is successful, otherwise None.
+    """
+    full_url = f"{BASE_URL}/{endpoint}"  # Avoids redefining 'url'
+    
+    try:
+        response = requests.get(full_url, timeout=10)  # Added timeout
+        response.raise_for_status()  # Raises HTTPError for bad responses
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data: {e}")  # Proper error handling
+        return None
 
 
-# Unused variable (should trigger a warning)
-unused_variable = "I am not used anywhere"
+class SomeClass:
+    """Example class with a method."""
 
-url = "https://example.com"
-data = fetch_data(url)
-print(data)
+    def some_method(self):
+        """An example method."""
+        print("This is a method.")
+
+
+# Ensure correct formatting: 2 blank lines after class/method definitions
+if __name__ == "__main__":
+
+    data = fetch_data("data")
+    if data:
+        print("Data fetched successfully!")
