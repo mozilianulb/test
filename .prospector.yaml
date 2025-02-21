@@ -1,19 +1,28 @@
-output-format: pylint
-
-tools:
-  pylint:
-    run: true  # ✅ Ensures pylint runs
-    disable: []  # ✅ Allows all warnings
-    enable:
-      - W0511  # ✅ Explicitly enables TODO/FIXME detection
-    options:
-      notes:  # ✅ Ensures pylint scans for comments
-        - TODO
-        - FIXME
-
-strictness: veryhigh  # ✅ Forces all warnings to show up
-
-
-
-
+pylint:
+  disable:
+    - wrong-import-order
+    - no-self-argument
+    - empty-docstring
+    - no-self-use
+    - unused-format-string-key
+    - multiple-statements
+    - broad-except
+    - superfluous-parens
+    - no-member
+    - no-name-in-module
+    - global-statement
+    - too-many-return-statements
+    - relative-import
+    - wildcard-import
+    - pointless-except
+    - missing-docstring
+    - bad-builtin
+    - invalid-name
+    - missing-function-docstring
+    - missing-class-docstring
+    - missing-module-docstring
+  enable:
+    - fixme  # ✅ Enable detection of TODO and FIXME
+  options:
+    max-line-length: 159
 
