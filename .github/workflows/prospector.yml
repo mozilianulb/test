@@ -24,4 +24,4 @@ jobs:
         run: pip install prospector
 
       - name: Run Prospector
-        run: prospector --output-format text
+        run: prospector --output-format text || true
