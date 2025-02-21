@@ -1,6 +1,0 @@
-output-format: grouped
-strictness: medium
-test-warnings: true
-doc-warnings: true
-pep8:
-  disable: ['C0301']  # Example of disabling a warning
