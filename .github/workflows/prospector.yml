@@ -25,3 +25,13 @@ jobs:
 
       - name: Run Prospector
         run: prospector --output-format text || true
+        strictness: veryhigh
+output-format: grouped
+infer_config: true
+pylint:
+  run: true
+  disable:
+    - missing-docstring
+  enable:
+    - W0511  # Enables TODO/FIXME detection
+
