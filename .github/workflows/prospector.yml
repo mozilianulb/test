@@ -21,7 +21,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install Prospector
-        run: pip install prospector
+        run: pip install prospector pylint
 
       - name: Run Prospector
-        run: prospector || true  # Run with default settings in .prospector.yaml
+        run: prospector --output-format pylint || true  # Ensure pylint runs
