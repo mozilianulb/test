@@ -2,13 +2,16 @@ output-format: pylint
 
 tools:
   pylint:
+    run: true  # ✅ Ensures pylint runs
+    disable: []  # ✅ Allows all warnings
     enable:
-      - W0511  # ✅ Enables TODO/FIXME detection
-    notes:
-      - TODO
-      - FIXME
+      - W0511  # ✅ Explicitly enables TODO/FIXME detection
+    options:
+      notes:  # ✅ Ensures pylint scans for comments
+        - TODO
+        - FIXME
 
-strictness: veryhigh # ✅ Prevents filtering out warnings
+strictness: veryhigh  # ✅ Forces all warnings to show up
 
 
 
