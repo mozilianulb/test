@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: "4.x"
+          python-version: "3.x"
 
       - name: Install Prospector
         run: pip install prospector
