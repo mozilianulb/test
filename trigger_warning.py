@@ -7,7 +7,7 @@ def fetch_data(url):
     # FIXME: Handle non-200 status codes properly
     
     if response.status_code != 200:
-        pass  # FIXME: No proper error handling;
+        pass  # FIXME: No proper error handling
 
     # Intentional issue: Unused variable (Prospector should flag this)
     data = response.text  
