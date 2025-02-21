@@ -12,12 +12,12 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "4.x"
 
       - name: Install Prospector
         run: pip install prospector
@@ -26,7 +26,7 @@ jobs:
         run: prospector > prospector-report.txt || true
 
       - name: Upload Prospector Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: prospector-report
           path: prospector-report.txt
