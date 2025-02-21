@@ -1,0 +1,7 @@
+def sync_data():
+    # TODO: handle error if response bad (fixme)  <-- This will trigger a warning
+    response = get_data()
+    if response is None:
+        pass  # Not handling the error properly
+
+sync_data()
