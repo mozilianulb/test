@@ -2,10 +2,11 @@ output-format: pylint
 
 tools:
   pylint:
-    disable:
-      - C0114  # Disable missing module docstring warning (optional)
     enable:
-      - W0511  # Enable TODO/FIXME warnings
+      - W0511  # ✅ Enables TODO/FIXME detection
+    notes:
+      - TODO
+      - FIXME
 
 
 
