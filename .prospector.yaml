@@ -1,3 +1,17 @@
+strictness: high
+output-format: pylint
+
+ignore-paths:
+  - ^docs?/
+  - ^tests?/?
+  - /tests?(/|$)
+  - .*/tests(/|$)
+  - (^|/)test_[_a-zA-Z0-9]+.py$
+  - (^|/)[_a-zA-Z0-9]+_tests?.py$
+  - (^|/)tests?.py
+  - ^setup.py$
+  - (^|/)\..+
+
 pylint:
   disable:
     - wrong-import-order
@@ -26,3 +40,24 @@ pylint:
   options:
     max-line-length: 159
 
+pycodestyle:
+  disable:
+    - E123
+    - E121
+    - E302
+  enable: []
+
+pyflakes:
+  enable: []
+  disable:
+    - F403
+
+mccabe:
+  options:
+    max-complexity: 15
+
+dodgy:
+  run: true
+
+bandit:
+  run: true
