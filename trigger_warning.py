@@ -1,27 +1,21 @@
-import requests  # Unused import (should trigger a warning)
+# trigger_todo_warning.py
+
+import requests
 
 def fetch_data(url):
     response = requests.get(url)
-    
-    # TODO: This is an unfinished function (Prospector should flag this)
-    # FIXME: Handle non-200 status codes properly
-    
+
+    # TODO: Handle error if response is bad (fixme) 
     if response.status_code != 200:
-        pass  # FIXME: No proper error handling
+        pass  # FIXME: Proper error handling needed
 
-    # Intentional issue: Unused variable (Prospector should flag this)
-    data = response.text  
+    return response.text  # Might return None if status is not 200
 
-    return data  # Might return None if status is not 200
-
-# Security issue: Hardcoded API Key
+# Hardcoded API Key (should trigger a security warning)
 API_KEY = "123456"
 
-def example_function():
-    # TODO: Implement this function properly
-    # FIXME: This needs better error handling
-    pass
-
+# Unused variable (should trigger a warning)
+unused_variable = "I am not used anywhere"
 
 url = "https://example.com"
 data = fetch_data(url)
