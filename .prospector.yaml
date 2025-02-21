@@ -5,12 +5,12 @@ tools:
     disable:
       - C0114  # Disable missing module docstring warning
     enable:
-      - W0511  # ✅ Explicitly enables TODO/FIXME detection
+      - W0511  # ✅ Enables TODO/FIXME detection
     notes:
       - TODO
       - FIXME
 
-strictness: none  # ✅ Disables strict filtering, so TODO/FIXME aren't ignored
+strictness: none  # ✅ Prevents filtering out warnings
 
 
 
