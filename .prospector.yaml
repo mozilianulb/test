@@ -7,3 +7,4 @@ pylint:
     - missing-docstring
   enable:
     - W0511  # Enables TODO/FIXME detection
+
