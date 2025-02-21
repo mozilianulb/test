@@ -20,6 +20,7 @@ class ExampleClass:
     def example_method(self):
         """An example method."""
         print("Hello, world!")
+    
 
 
 # ✅ Ensured two blank lines after class/method definitions
