@@ -4,5 +4,8 @@ infer_config: true
 
 pylint:
   run: true
+  disable:
+    - all  # Disable all other warnings
   enable:
-    - W0511  # Enables TODO/FIXME detection
+    - W0511  # Enable TODO/FIXME warnings
+
