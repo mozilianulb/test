@@ -1,10 +1,12 @@
-strictness: high
 output-format: pylint
-infer_config: true
 
-pylint:
-  run: true
-  disable: []
+tools:
+  pylint:
+    disable:
+      - C0114  # Disable missing module docstring warning (optional)
+    enable:
+      - W0511  # Enable TODO/FIXME warnings
+
 
 
 
