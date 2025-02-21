@@ -20,8 +20,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Prospector
+      - name: Install Prospector and Pylint
         run: pip install prospector pylint
 
       - name: Run Prospector
-        run: prospector --output-format pylint || true  # Ensure pylint runs
+        run: prospector --output-format pylint --show-profile || true
