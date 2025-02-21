@@ -1,1 +1,9 @@
-
+strictness: veryhigh
+output-format: pylint
+infer_config: true
+pylint:
+  run: true
+  disable:
+    - missing-docstring
+  enable:
+    - W0511  # Enables TODO/FIXME detection
