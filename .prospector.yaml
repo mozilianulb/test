@@ -10,7 +10,7 @@ tools:
       - TODO
       - FIXME
 
-strictness: none  # ✅ Prevents filtering out warnings
+strictness: veryhigh # ✅ Prevents filtering out warnings
 
 
 
