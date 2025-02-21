@@ -17,6 +17,12 @@ def fetch_data(url):
 # Security issue: Hardcoded API Key
 API_KEY = "123456"
 
+def example_function():
+    # TODO: Implement this function properly
+    # FIXME: This needs better error handling
+    pass
+
+
 url = "https://example.com"
 data = fetch_data(url)
 print(data)
