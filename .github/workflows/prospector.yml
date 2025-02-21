@@ -1,0 +1,32 @@
+name: Python Code Analysis with Prospector
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  prospector_analysis:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
+
+      - name: Install Prospector
+        run: pip install prospector
+
+      - name: Run Prospector
+        run: prospector > prospector-report.txt || true
+
+      - name: Upload Prospector Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: prospector-report
+          path: prospector-report.txt
