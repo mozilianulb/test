@@ -1,7 +1,16 @@
-def sync_data():
-    # TODO: handle error if response bad (fixme)  <-- This will trigger a warning
-    response = get_data()
-    if response is None:
-        pass  # Not handling the error properly
+# ⚠️ Unused import (Triggers warning)
+import os  
 
-sync_data()
+# ⚠️ Undefined variable (Triggers warning)
+print(undefined_var)  
+
+# ⚠️ Unused variable (Triggers warning)
+x = 42  
+
+# ⚠️ TODO comment without resolution (Triggers warning)
+# TODO: Fix this error handling! (fixme)
+def risky_function():
+    try:
+        1 / 0  # ⚠️ Division by zero
+    except:
+        pass  # ⚠️ Bare except (Triggers warning)
