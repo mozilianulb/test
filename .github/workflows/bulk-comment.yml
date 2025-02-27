@@ -1,0 +1,45 @@
+name: Bulk Comment on Type Unsupported Issues
+
+on:
+  workflow_dispatch:  # Manually trigger the workflow
+
+jobs:
+  bulk_comment:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+
+    - name: Bulk Comment on Issues
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const urlToSearchFor = "https://f1tv.formula1.com/";
+          const labelToSearchFor = "type-unsupported";
+          const comment = "This is a bulk comment for issues with the unsupported type and the specified URL!";
+
+          // Step 1: Search for issues with the 'type-unsupported' label
+          const issues = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            labels: labelToSearchFor,
+            state: 'open',  // Only consider open issues
+          });
+
+          // Step 2: Loop through the issues to check for the URL
+          for (const issue of issues.data) {
+            if (issue.body.includes(urlToSearchFor)) {
+              // If the issue contains the specified URL, post a comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: comment,
+              });
+              console.log(`Commented on issue #${issue.number} containing the URL.`);
+            }
+          }
+ 
+
