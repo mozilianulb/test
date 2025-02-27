@@ -18,7 +18,7 @@ jobs:
         script: |
           const urlToSearchFor = "https://f1tv.formula1.com/";
           const labelToSearchFor = "type-unsupported";
-          const comment = "This is a bulk comment for issues with the unsupported type and the specified URL!";
+          comment = "We appreciate your report but this is a known issue.\nClosing as duplicate of https://bugzilla.mozilla.org/show_bug.cgi?id=1950282\n[qa_09/2025]"
 
           // Step 1: Search for issues with the 'type-unsupported' label
           const issues = await github.rest.issues.listForRepo({
